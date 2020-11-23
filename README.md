@@ -20,6 +20,12 @@
 | ------ | ------ | ----------- |
 | name   | string | null: false |
 
+### Association
+
+- has_many :room_users
+- has_many :users, through: room_users
+- has_many :messages
+
 ## room_users table
 
 | Column | Type       | Options                        |
@@ -29,9 +35,8 @@
 
 ### Association
 
-- has_many :room_users
-- has_many :users, through: room_users
-- has_many :messages
+- belongs_to :room
+- belongs_to :user
 
 ## messages table
 
