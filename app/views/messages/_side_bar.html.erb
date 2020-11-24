@@ -9,13 +9,13 @@
 </div>
 
 <%# Side bar content %>
-<div class="rooms">
 
-<%# DBからルーム名を取得してリスト表示 %>
+<div class="rooms">
   <% current_user.rooms.each do |room| %>
     <div class="room">
       <div class="room-name">
-        <a href="#"><%= room.name %></a>
+      <%# DBからルーム名を取得してリスト表示 %>
+        <%= link_to room.name, room_messages_path(room) %>
       </div>
     </div>
   <% end %>
